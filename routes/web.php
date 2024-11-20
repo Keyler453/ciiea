@@ -26,6 +26,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicationController as GuestPublicationController;
 use App\Http\Controllers\SocialServiceController as GuestSocialServiceController;
 use App\Http\Controllers\VinculationDocumentController as GuestVinculationDocumentController;
+use App\Http\Controllers\RecordController;
 use App\Models\Resource;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -72,6 +73,11 @@ Route::get('/public/files/{file}', [FileController::class, 'showPublicFile'])->n
 Route::get('/download/files/{file}', [FileController::class, 'downloadPublicFile'])->name('public.file.download');
 
 Route::get('/profile_images/{image}', [FileController::class, 'showProfileImage'])->name('profile-images.show');
+
+
+// routes/web.php
+Route::post('/register', [RecordController::class, 'store'])->name('register');
+Route::post('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/dashboard', function () {
 	return Inertia::render('Dashboard');
