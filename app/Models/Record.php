@@ -1,6 +1,4 @@
 <?php
-
-// En Record.php (Modelo)
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,7 +8,6 @@ class Record extends Model
 {
     use HasFactory;
 
-    // Definir los campos que se pueden llenar
     protected $fillable = [
         'nombre_completo', 
         'edad',
@@ -31,6 +28,5 @@ class Record extends Model
         'usuario', 
         'correo', 
         'contrasena', 
-        'recaptcha_token'
     ];
 }
